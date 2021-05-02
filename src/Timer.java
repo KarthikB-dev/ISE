@@ -3,8 +3,16 @@ import java.util.*;
 import java.io.*;
 import java.net.*;
 import java.awt.Desktop;
+/**
+ * This program is a study timer
+ */
 public class Timer 
 {
+    
+    /** 
+     * @param args
+     * Creates the study timer
+     */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         TimeUnit clock = TimeUnit.MINUTES;
@@ -14,6 +22,9 @@ public class Timer
         //determine if breaks should last 10 minutes
         //study sessions last 50 minutes, and we have
         //3 breaks/study combos
+        //in essence, you have a 50 minute study session
+        //followed by a 10 minute break. You repeat this
+        //for a total of 3 hours
         boolean default_time = true;
         String want_default = "";
         while (!want_default.equals("y") && !want_default.equals("n")) {
@@ -26,6 +37,7 @@ public class Timer
         }
         if (!default_time)
         {
+            //The HashMap converts user input to the correct long
             HashMap<String, Long> mins = new HashMap<String, Long>();
             mins.put("A", 10L); 
             mins.put("B", 20L);
@@ -97,6 +109,9 @@ public class Timer
         }
         return mins.get(letter);
     }
+    /**
+     * Plays appropriate music
+     */
     public static void music(boolean study) {
         String url;
         if (study) {
