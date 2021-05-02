@@ -2,6 +2,7 @@ import java.util.concurrent.*;
 import java.util.*;
 import java.io.*;
 import java.net.*;
+import java.awt.Desktop;
 public class Timer 
 {
     public static void main(String[] args) {
@@ -33,33 +34,35 @@ public class Timer
             mins.put("E", 50L);
             mins.put("F", 60L);
             mins.put("G", 90L);
-    
-            System.out.println("How long do you want to study for?");
-            System.out.print("A) 10 minutes B) 20 C) 30 D) 40 E) 50 F) 60 ");
-            System.out.print("G) 90");
-            String study_input = input.next();
-            timeStudy = mins(study_input, mins);
-            if (timeStudy == -1L) {
-                input.close();
-                return;
+            timeStudy = -1L;
+            timeBreak = -1L;
+            while (timeStudy == -1L)    
+            {
+                System.out.println("How long do you want to study for?");
+                System.out.print("A) 10 minutes B) 20 C) 30 D) 40 E) 50 F) 60 ");
+                System.out.print("G) 90");
+                String study_input = input.next();
+                timeStudy = mins(study_input, mins);
             }
-            System.out.println("How long should your breaks be?");
-            System.out.print("A) 10 minutes B) 20 C) 30 D) 40 E) 50 F) 60 ");
-            System.out.print("G) 90");
-            String break_input = input.next();
-            timeBreak = mins(break_input, mins);
-            if (timeBreak == -1L) {
-                input.close();
-                return;
+            while (timeBreak == -1L) {
+                System.out.println("How long should your breaks be?");
+                System.out.print("A) 10 minutes B) 20 C) 30 D) 40 E) 50 F) 60 ");
+                System.out.print("G) 90");
+                String break_input = input.next();
+                timeBreak = mins(break_input, mins);
             }
+            
             System.out.println("How many subsessions do you want to have?");
+            System.out.println("Please don't enter a number or the program will crash");
             numBreaks = input.nextInt();
         }
         input.close();
         for (int i = 0; i < numBreaks; i++) { 
             try {
                 System.out.println("It is time to study!");
+                music(true);
                 clock.sleep(timeStudy);
+                music(false);
                 System.out.println("It is time to take a break :)");
                 clock.sleep(timeBreak);
             }
@@ -91,5 +94,29 @@ public class Timer
             return -1L;
         }
         return mins.get(letter);
+    }
+    public static void music(boolean study) {
+        String url;
+        if (study) {
+            url = "https://www.youtube.com/watch?v=sjkrrmBnpGE";
+        }
+        else {
+            url = "https://www.youtube.com/watch?v=6riDJMI-Y8U";
+        }
+        Runtime runtime = Runtime.getRuntime();
+        try {
+            Desktop desktop = java.awt.Desktop.getDesktop();
+            desktop.browse(new URI(url));
+        } 
+        catch (Exception e) {
+            try {
+                System.out.println("Loading");
+                runtime.exec("xdg-open " + url);
+            }
+            catch (IOException iox) {
+                System.out.println("Error");
+                System.out.println(e.getMessage());
+            }
+        }
     }
 }
