@@ -8,7 +8,6 @@ import java.awt.Desktop;
  */
 public class Timer 
 {
-    
     /** 
      * @param args
      * Creates the study timer
@@ -38,35 +37,42 @@ public class Timer
         if (!default_time)
         {
             //The HashMap converts user input to the correct long
-            HashMap<String, Long> mins = new HashMap<String, Long>();
-            mins.put("A", 10L); 
-            mins.put("B", 20L);
-            mins.put("C", 30L);
-            mins.put("D", 40L);
-            mins.put("E", 50L);
-            mins.put("F", 60L);
-            mins.put("G", 90L);
-            timeStudy = -1L;
-            timeBreak = -1L;
-            while (timeStudy == -1L)    
-            {
-                System.out.println("How long do you want to study for?");
-                System.out.print("A) 10 minutes B) 20 C) 30 D) 40 E) 50 F) 60 ");
-                System.out.print("G) 90 ");
-                String study_input = input.next();
-                timeStudy = mins(study_input, mins);
+            //TODO replace hashMap with parseLong
+            /*HashMap<String, Long> mins = new HashMap<String, Long>();
+                mins.put("A", 10L); 
+                mins.put("B", 20L);
+                mins.put("C", 30L);
+                mins.put("D", 40L);
+                mins.put("E", 50L);
+                mins.put("F", 60L);
+                mins.put("G", 90L);
+                timeStudy = -1L;
+                timeBreak = -1L;
+            */
+            System.out.println("How long do you want to study for?");
+            try {
+                timeStudy = input.nextLong();
             }
-            while (timeBreak == -1L) {
-                System.out.println("How long should your breaks be?");
-                System.out.print("A) 10 minutes B) 20 C) 30 D) 40 E) 50 F) 60 ");
-                System.out.print("G) 90 ");
-                String break_input = input.next();
-                timeBreak = mins(break_input, mins);
+            catch (Exception e) {
+                System.out.println("error: exiting program");
+                return;
             }
-            
-            System.out.println("How many subsessions do you want to have?");
-            System.out.println("Please enter a number or the program will crash");
-            numBreaks = input.nextInt();
+            System.out.println("How long should breaks be?");
+            try {
+                timeBreak = input.nextLong();
+            }
+            catch (Exception e) {
+                System.out.println("error: exiting program");
+            }
+            System.out.println("How many total sessions do you want to have?");
+            try {
+                numBreaks = input.nextInt();
+            }
+            catch (Exception e) {
+                System.out.println("Invalid input. Please try to enter an integer.");
+            }
+        
+            	    
         }
         input.close();
         for (int i = 0; i < numBreaks; i++) { 
@@ -99,15 +105,6 @@ public class Timer
             System.out.println("ERROR INTERRUPTED EXCEPTION");    
         }
         System.out.println("Over!");
-    }
-    /**
-     * Returns the appropriate long representing how long to study
-     */
-    public static long mins (String letter, Map<String, Long> mins) {
-        if (mins.get(letter) == null) {
-            return -1L;
-        }
-        return mins.get(letter);
     }
     /**
      * Plays appropriate music

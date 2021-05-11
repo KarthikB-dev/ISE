@@ -1,0 +1,23 @@
+Make sure to keep updating functional specs document
+
+Make sure to have the table (structural design), a table of data structures with what is stored
+in each data structure, then explanation why use chose hich one
+
+
+Then make inheritance diagram, that shows how all the classes are tied together
+
+Javadocs (not needed yet)
+
+
+Testing (not really needed yet, just keep a personal log that logs all the testing
+you have done)
+
+final project presentations are in the last few days of class, everyone is presenting their
+final project
+
+assign days to present
+
+Earlier u go, more lenient
+- sooner u go, grading is nicer, bc you have less time
+
+project is still due at midnight, when u present doesn't change that
