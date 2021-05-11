@@ -36,19 +36,6 @@ public class Timer
         }
         if (!default_time)
         {
-            //The HashMap converts user input to the correct long
-            //TODO replace hashMap with parseLong
-            /*HashMap<String, Long> mins = new HashMap<String, Long>();
-                mins.put("A", 10L); 
-                mins.put("B", 20L);
-                mins.put("C", 30L);
-                mins.put("D", 40L);
-                mins.put("E", 50L);
-                mins.put("F", 60L);
-                mins.put("G", 90L);
-                timeStudy = -1L;
-                timeBreak = -1L;
-            */
             System.out.println("How long do you want to study for?");
             try {
                 timeStudy = input.nextLong();
