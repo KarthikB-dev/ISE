@@ -42,6 +42,7 @@ public class Timer
             }
             catch (Exception e) {
                 System.out.println("error: exiting program");
+                input.close();
                 return;
             }
             System.out.println("How long should breaks be?");
