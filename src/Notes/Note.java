@@ -6,13 +6,14 @@ public class Note {
     //section stores the section of the note
     //for example, it could contain the following
     //"Lynbrook High School", "Computer Science", "Data Structures", "Maps"
-    private LinkedList<String> section;
+    private String section;
     private String contents;
+    private ArrayList<Note> subNotes;
     /**
      * Creates a new Note object 
      * @param section The section of the note
      */
-    public Note(LinkedList<String> section) {
+    public Note(String section) {
         this.section = section;
     }
     /**
@@ -20,14 +21,14 @@ public class Note {
      * @param section The section of the note
      * @param contents the contents of the note
      */
-    public Note(LinkedList<String> section, String contents) {
+    public Note(String section, String contents) {
         this.section = section;
         this.contents = contents;
     }
     /**
      * Modifies the current Note
      */
-    public void setSection(LinkedList<String> section) {
+    public void setSection(String section) {
         this.section = section;
     }
     /**
@@ -39,7 +40,7 @@ public class Note {
     /**
      * Returns the Note's section
      */
-    public LinkedList<String> getSection() {
+    public String getSection() {
         return this.section;
     }
     /**
@@ -47,5 +48,12 @@ public class Note {
      */
     public String getContents() {
         return this.contents;
+    }
+    /**
+     * Adds a new note to this one
+     * @param newNote The new note to be added
+     */
+    public void addNote(Note newNote) {
+        this.subNotes.add(newNote);
     }
 }
