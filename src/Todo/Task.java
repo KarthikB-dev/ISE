@@ -14,12 +14,18 @@ public class Task {
     personalTask.java
     time should be done each day (eg.) in the morning and
     night for brushing teeth, or going for a run in the evening
-    how often each should be done (daily for exercise, 
-    twice a day for brushing teeth, every other day for strength
-    exercises)
+    how often should be done (daily, once every two days, once every 3
+    , etc.)
     academicTask.java
     has a due date, has a priority, etc.
     */
+    /**
+     * Makes a new Task object
+     * @param description What to complete
+     */
+    public void Task(String description) {
+        this.description = description;
+    }
     /**
      * Adds a new component task
      * @param subTask A task to be a part of this one
