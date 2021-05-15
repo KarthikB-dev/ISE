@@ -7,4 +7,6 @@ public class personalTask extends Task
     //diet
     //personal project
     //skill to learn(with a deadline, perhaps java.util.date)
+    private final boolean IS_HEALTH;
+
 }

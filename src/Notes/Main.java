@@ -5,8 +5,10 @@ import java.util.*;
 public class Main
 {
 	public static void main(String[] args) {
-		//uses nested arraylists to
-		//store notes
-		System.out.println("Hello world!");
+		ArrayList<Note> notes;
+		LinkedList<String> test = new LinkedList<>();
+		Note n = new Note(test);
+		
+
 	}
 }
