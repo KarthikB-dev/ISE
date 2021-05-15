@@ -4,7 +4,11 @@ import java.io.*;
 import java.net.*;
 import java.awt.Desktop;
 /**
- * This program is a study timer
+ * A study timer class
+ * This is a study timer that uses the pomodoro technique of studying
+ * @author Karthik Bhattaram
+ * @version 1.0
+ * @sources https://www.youtube.com/watch?v=LqRrCQbPcQI
  */
 public class Timer 
 {
