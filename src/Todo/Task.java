@@ -20,4 +20,11 @@ public class Task {
     academicTask.java
     has a due date, has a priority, etc.
     */
+    /**
+     * Adds a new component task
+     * @param subTask A task to be a part of this one
+     */
+    public void addTask(Task subTask) {
+        this.subtasks.add(subTask);
+    }
 }
