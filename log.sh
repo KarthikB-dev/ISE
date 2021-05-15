@@ -1,4 +1,5 @@
 #!/bin/bash
+#thank you Ronak Badhe for this shell script
 git log --no-merges --format="%cd" --date=short | sort -u -r | while read DATE ; do
     echo 'Karthik B'
     echo [$DATE]
