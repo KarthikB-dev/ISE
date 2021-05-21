@@ -56,4 +56,32 @@ public class Note {
     public void addNote(Note newNote) {
         this.subNotes.add(newNote);
     }
+    /**
+     * Checks if the note is a note and not just a section header
+     * @return If contents are not null
+     */
+    public boolean hasContents() {
+        return this.contents != null;
+    }
+    /**
+     * Checks if this note contains notes
+     * @return If subNotes is not empty
+     */
+    public boolean hasSubNotes() {
+        return this.subNotes.size() != 0;
+    }
+    /**
+     * Prints all the notes and sub notes
+     */
+    public void printNotes() {
+        System.out.println(this.section);
+        if (this.hasContents()) {
+            System.out.println("    * = " + this.contents);
+        }
+        if (this.hasSubNotes()) {
+            for (Note subNote: subNotes) {
+                subNote.printNotes();
+            }
+        }
+    }
 }

@@ -87,6 +87,5 @@ public class PersonalTask extends Task
             currTime = 4;
         }
         return time == currTime;
-
     }
 }
