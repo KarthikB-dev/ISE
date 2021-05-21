@@ -15,6 +15,7 @@ public class Note {
      */
     public Note(String section) {
         this.section = section;
+        this.subNotes = new ArrayList<Note>();
     }
     /**
      * Creates a new Note object 
@@ -24,6 +25,7 @@ public class Note {
     public Note(String section, String contents) {
         this.section = section;
         this.contents = contents;
+        this.subNotes = new ArrayList<Note>();
     }
     /**
      * Modifies the current Note
@@ -74,6 +76,7 @@ public class Note {
      * Prints all the notes and sub notes
      */
     public void printNotes() {
+        //TODO set up indentation for subnotes
         System.out.println(this.section);
         if (this.hasContents()) {
             System.out.println("    * = " + this.contents);
