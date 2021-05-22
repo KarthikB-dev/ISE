@@ -5,8 +5,6 @@ import java.util.*;
 public class Main
 {
 	public static void main(String[] args) {
-		ArrayList<Note> notes;
-		
 		Note cs = new Note("Computer Science");
 		Note netwk = new Note("Networking", 
 			"Various protocols and connections between computers");
@@ -14,7 +12,11 @@ public class Main
 			"Maintaining confidentiality, integrity, and availability with computer networks");
 		netwk.addNote(netsec);
 		cs.addNote(netwk);
-		cs.printNotes();
+		Note hardware = new Note("Hardware", 
+			"Parts of a computer, like the CPU, Mobo, GPU, Peripherals, etc.");
+		cs.addNote(hardware);
+		cs.printNotes(0);
+		
 
 	}
 }

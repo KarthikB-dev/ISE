@@ -75,15 +75,19 @@ public class Note {
     /**
      * Prints all the notes and sub notes
      */
-    public void printNotes() {
+    public void printNotes(int numTabs) {
         //TODO set up indentation for subnotes
-        System.out.println(this.section);
+        StringBuffer tabString = new StringBuffer("");
+        for (int i = 0; i < numTabs; i++) {
+            tabString.append('\t');
+        }
+        System.out.println(tabString + this.section);
         if (this.hasContents()) {
-            System.out.println("    * = " + this.contents);
+            System.out.println(tabString + "    * = " + this.contents);
         }
         if (this.hasSubNotes()) {
             for (Note subNote: subNotes) {
-                subNote.printNotes();
+                subNote.printNotes(numTabs + 1);
             }
         }
     }
