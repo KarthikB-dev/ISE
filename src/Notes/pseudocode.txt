@@ -1,0 +1,65 @@
+User input:
+
+nn (new note)
+- Program checks if the map is empty. Since the map is empty at this point, 
+it does not ask the user for what note this note should be added to
+cout what is the section name?
+cin <Computers>
+cout what are the contents? enter ~ if there are none
+cin <something that automates arithmetic>
+
+1: Computers
+    *= something that automates arithmetic
+
+treeMap
+
+1: <the computer note>
+
+nn 
+- program sees that the treeMap is not empty, and asks the user for what
+note the new note should be added to
+- however, the program sees that there is only one note, and so the program knows that
+the user can only really add the new note to that one existing note
+
+cout what is the section name?
+cin <networking>
+cout what are the contents? enter ~ if there are none
+cin <protocols and infrastructure for data communication between computers>
+
+When printing out the note structure, be sure to increment some number whose scope is larger than the method
+itself
+1: Computers
+    *= something that automates arithmetic
+    2: Networking
+    *= protocols and infrastructure for data communication between computers
+
+treeMap
+1: <the computer note>
+2: <the networking note>
+
+nn 
+- the program sees that there is more than one note in the map, and then it asks the user which note the new note should be added to
+
+cout which note should the new note be added to?
+
+cin <2>
+
+cout What is the name of the new note?
+
+cin <Network security>
+cout what are the contents? enter ~ if there are none
+cin <Preserving CIA within a computer network>
+
+treeMap
+
+1: computer note
+2: networking note
+3: network security note
+
+1: Computers
+    *= something that automates arithmetic
+    2: Networking
+    *= protocols and infrastructure for data communication between computers
+	3: Network security
+	*= Preserving CIA within a computer network
+
