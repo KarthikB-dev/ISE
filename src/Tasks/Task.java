@@ -23,7 +23,7 @@ public class Task {
      * Makes a new Task object
      * @param description What to complete
      */
-    public void Task(String description) {
+    public Task(String description) {
         this.description = description;
     }
     /**

@@ -27,11 +27,7 @@ public class Main
 		int noteIndex = 1;
 		TreeMap<Integer, Note> treeNote = new TreeMap<Integer, Note>();
 		Scanner cin = new Scanner(System.in);
-		// System.out.println("Enter nn for a new note");
-		// System.out.println("Enter 'exit' if you wish to exit");
 		while (true) {
-			//if the user wants to enter a new note
-			
 			String userInput = "";
 			while (userInput.equals("")) {
 				System.out.println("Enter nn for a new note");
