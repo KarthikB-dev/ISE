@@ -4,7 +4,7 @@ import java.util.*;
  * The main method for file io and user IO
  * @author Karthik Bhattaram
  * @version 5/21/2021
- * @source None
+ * @source https://www.w3schools.com/java/java_files_create.asp
  */
 public class Main
 {
@@ -89,7 +89,8 @@ public class Main
 			}
 		}
 		if (treeNote.size() >= 1) {
-			treeNote.get(1).printNotes(0);
+			//write the notes to a file
+			treeNote.get(1).writeNotes(0);
 		}
 		else {
 			System.out.println("None");

@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 /**
  * A class for managing notes
  */
@@ -112,5 +113,41 @@ public class Note {
                 subNote.printNotes(numTabs + 1);
             }
         }
+    }
+    /**
+     * Writes the notes to a file
+     */
+    public void writeNotes(int numTabs) {
+        try {
+            //TODO change this to the correct file path on your computer!
+            //note that Microsoft Windows paths have back slashes
+            File outFile = new File("~/ISE/notes.txt");
+            if (outFile.createNewFile()) {
+                FileWriter fout = new FileWriter("~/ISE/notes.txt");
+                StringBuffer tabString = new StringBuffer("");
+                for (int i = 0; i < numTabs; i++) {
+                    tabString.append('\t');
+                }
+                fout.write(tabString + this.section);
+                fout.write(" (" + this.index + ")");
+                fout.write('\n');
+                if (this.hasContents()) {
+                    fout.write(tabString + "    * = " + this.contents);
+                    fout.write('\n');
+                }
+                if (this.hasSubNotes()) {
+                    for (Note subNote: subNotes) {
+                        subNote.printNotes(numTabs + 1);
+                    }
+                }
+            }
+            else {
+                System.out.println("File already exists")
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        
     }
 }
