@@ -1,0 +1,2 @@
+compsci (1)
+    * = the study of computers

@@ -121,9 +121,9 @@ public class Note {
         try {
             //change this to the correct file path on your computer!
             //note that Microsoft Windows paths have back slashes
-            File outFile = new File("~/ISE/notes.txt");
+            File outFile = new File("/home/impacable/ISE/notes.txt");
             if (outFile.createNewFile()) {
-                FileWriter fout = new FileWriter("~/ISE/notes.txt");
+                FileWriter fout = new FileWriter("/home/impacable/ISE/notes.txt");
                 StringBuffer tabString = new StringBuffer("");
                 for (int i = 0; i < numTabs; i++) {
                     tabString.append('\t');
