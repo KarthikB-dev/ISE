@@ -119,7 +119,7 @@ public class Note {
      */
     public void writeNotes(int numTabs) {
         try {
-            //TODO change this to the correct file path on your computer!
+            //change this to the correct file path on your computer!
             //note that Microsoft Windows paths have back slashes
             File outFile = new File("~/ISE/notes.txt");
             if (outFile.createNewFile()) {
@@ -140,9 +140,10 @@ public class Note {
                         subNote.printNotes(numTabs + 1);
                     }
                 }
+                fout.close();
             }
             else {
-                System.out.println("File already exists")
+                System.out.println("File already exists");
             }
         }
         catch (IOException e) {
