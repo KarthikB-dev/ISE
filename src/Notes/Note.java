@@ -9,6 +9,7 @@ public class Note {
     private String section;
     private String contents;
     private ArrayList<Note> subNotes;
+    int index;
     /**
      * Creates a new Note object 
      * @param section The section of the note
@@ -20,12 +21,33 @@ public class Note {
     /**
      * Creates a new Note object 
      * @param section The section of the note
+     */
+    public Note(String section, int index) {
+        this.section = section;
+        this.subNotes = new ArrayList<Note>();
+        this.index = index;
+    }
+    /**
+     * Creates a new Note object 
+     * @param section The section of the note
      * @param contents the contents of the note
      */
     public Note(String section, String contents) {
         this.section = section;
         this.contents = contents;
         this.subNotes = new ArrayList<Note>();
+    }
+    /**
+     * Creates a new Note object 
+     * @param section The section of the note
+     * @param contents the contents of the note
+     * @param index The index of the note
+     */
+    public Note(String section, String contents, int index) {
+        this.section = section;
+        this.contents = contents;
+        this.subNotes = new ArrayList<Note>();
+        this.index = index;
     }
     /**
      * Modifies the current Note
@@ -76,12 +98,12 @@ public class Note {
      * Prints all the notes and sub notes
      */
     public void printNotes(int numTabs) {
-        //TODO set up indentation for subnotes
         StringBuffer tabString = new StringBuffer("");
         for (int i = 0; i < numTabs; i++) {
             tabString.append('\t');
         }
-        System.out.println(tabString + this.section);
+        System.out.print(tabString + this.section);
+        System.out.println(" (" + this.index + ")");
         if (this.hasContents()) {
             System.out.println(tabString + "    * = " + this.contents);
         }

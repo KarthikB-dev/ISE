@@ -1,10 +1,15 @@
 import java.util.*;
 /**
  * This takes in user input
+ * The main method for file io and user IO
+ * @author Karthik Bhattaram
+ * @version 5/21/2021
+ * @source None
  */
 public class Main
 {
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		Note cs = new Note("Computer Science");
 		Note netwk = new Note("Networking", 
 			"Various protocols and connections between computers");
@@ -13,10 +18,58 @@ public class Main
 		netwk.addNote(netsec);
 		cs.addNote(netwk);
 		Note hardware = new Note("Hardware", 
-			"Parts of a computer, like the CPU, Mobo, GPU, Peripherals, etc.");
+			"Parts of a computer, like the CPU, motherboard, GPU, peripherals, etc.");
 		cs.addNote(hardware);
 		cs.printNotes(0);
-		
-
+		//each time a new note is added, it is added to a TreeMap
+		int noteIndex = 1;
+		TreeMap<Integer, Note> treeNote = new TreeMap<Integer, Note>();
+		Scanner cin = new Scanner(System.in);
+		while (true) {
+			//if the user wants to enter a new note
+			System.out.println("Enter nn for a new note");
+			System.out.println("Enter 'exit' if you wish to exit");
+			String userInput = cin.next();
+			if (userInput.equals("nn")) {
+				System.out.println("what is the section name?");
+				String section = cin.next();
+				System.out.println("what are the contents? enter ~ if there are none");
+				String contents = cin.next();
+				Note newNote;
+				if (contents.equals("~")) {
+					newNote = new Note(section);
+				}
+				else {
+					newNote = new Note(section, contents);
+				}
+				if (treeNote.size() == 0) {
+					treeNote.put(1, newNote);
+				}
+				else if (treeNote.size() == 1) {
+					//then we must add it to the note that
+					//has 1 as its key
+					treeNote.get(1).addNote(newNote);
+					treeNote.put(noteIndex, newNote);
+				}
+				else {
+					//if there are multiple notes, we will 
+					//need to ask the user which note this new 
+					//note should be added to
+					//user the next integer input
+					//as a key for the treeNote
+					//map, then add this note to
+					//the corresponding note
+					System.out.println("Which note should it be added to?");
+					treeNote.get(cin.nextInt()).addNote(newNote);
+					treeNote.put(noteIndex, newNote);
+				}
+				noteIndex++;
+			}
+			if (userInput.equals("exit"))
+			{
+				break;
+			}
+		}
+		cin.close();
 	}
 }
