@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 /**
  * This takes in user input
  * The main method for file io and user IO
@@ -20,34 +21,19 @@ public class Main {
 				userInput = cin.next();
 			}
 			if (userInput.equals("nt")) {
-				String section = "";
-				System.out.println("what is the section name?");
-				while (section.equals(""))
+				String description = "";
+				System.out.println("what is the description?");
+				while (description.equals(""))
 				{
-					section = cin.nextLine();
+					description = cin.nextLine();
 				}
-				System.out.println("what are the contents? enter ~ if there are none");
-				String contents = "";
-				while (contents.equals("")) {
-					contents = cin.nextLine();
-				}
-				Task newTask;
-				if (contents.equals("~")) {
-					newTask = new Task(section, TaskIndex);
-				}
-				else {
-					newTask = new Task(section, contents, TaskIndex);
-				}
-				if (treeTask.size() == 0) {
-					treeTask.put(1, newTask);
-				}
-				else if (treeTask.size() == 1) {
+				Task newTask = new Task(description, taskIndex);
+				if (treeTask.size() == 1) {
 					//then we must add it to the Task that
 					//has 1 as its key
 					treeTask.get(1).addTask(newTask);
-					treeTask.put(TaskIndex, newTask);
 				}
-				else {
+				else if (treeTask.size() > 1) {
 					//if there are multiple Tasks, we will 
 					//need to ask the user which Task this new 
 					//Task should be added to
@@ -63,11 +49,11 @@ public class Main {
 					}
 					Integer objIndex = index;
 					treeTask.get(objIndex).addTask(newTask);
-					treeTask.put(TaskIndex, newTask);
 				}
-				TaskIndex++;
+				treeTask.put(taskIndex, newTask);
+				taskIndex++;
+				treeTask.get(1).printTasks(0);
 			}
-			treeTask.get(1).printTasks(0);
 			if (userInput.equals("exit"))
 			{
 				break;
@@ -75,7 +61,16 @@ public class Main {
 		}
 		if (treeTask.size() >= 1) {
 			//write the Tasks to a file
-			treeTask.get(1).writeTasks(0);
+			try {
+				File outFile = new File("/home/impacable/ISE/Tasks.txt");
+				outFile.createNewFile();
+				System.out.println("File creation works");
+				FileWriter fout = new FileWriter("/home/impacable/ISE/Tasks.txt");
+				treeTask.get(1).writeTasks(0, fout);
+				fout.close();
+			} catch (IOException e) {
+				System.out.println("IO Exception");
+			}
 		}
 		else {
 			System.out.println("None");

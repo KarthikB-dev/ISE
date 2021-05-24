@@ -14,5 +14,6 @@ public class AcademicTask extends Task{
      */
     public AcademicTask(String description, Date dueDate) {
         this.description = description;
+        this.dueDate = dueDate;
     }
 }

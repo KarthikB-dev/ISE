@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 public class Task {
 	//tasks should have subtasks
     //for example, a task of learning react
@@ -15,6 +16,7 @@ public class Task {
     public Task(String description, int index) {
         this.description = description;
         this.index = index;
+        this.subtasks = new ArrayList<Task>();
     }
     /**
      * Adds a new component task
@@ -48,9 +50,37 @@ public class Task {
         System.out.print(tabString + this.description);
         System.out.println(" (" + this.index + ")");
         if (this.hasSubTasks()) {
-            for (Task subTask: subTasks) {
+            for (Task subTask: subtasks) {
                 subTask.printTasks(numTabs + 1);
             }
         }
+    }
+    /**
+     * Writes the Tasks to a file
+     */
+    public void writeTasks(int numTabs, FileWriter fout) {
+        try {
+            //change this to the correct file path on your computer!
+            //note that Microsoft Windows paths have back slashes
+            StringBuffer tabString = new StringBuffer("");
+            for (int i = 0; i < numTabs; i++) {
+                tabString.append('\t');
+            } 
+            fout.write(tabString + this.description);
+            fout.write(" (" + this.index + ")");
+            fout.write('\n');
+            System.out.println(this.hasSubTasks());
+            if (this.hasSubTasks()) {
+                for (Task subTask: subtasks) {
+                    subTask.writeTasks(numTabs + 1, fout);
+                }
+            }
+            System.out.println("Writing works");
+        
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        
     }
 }
