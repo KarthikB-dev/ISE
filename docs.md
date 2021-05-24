@@ -10,7 +10,7 @@ Go to the 'Tasks' folder, then run ``javac Main.java`` and ``java Main``
 
 # Encryption
 
-Encryption is _not_ supported on Microsoft Windows and UNIX platforms. Here are the instructions for how
+Encryption is _not_ supported on Microsoft Windows. Here are the instructions for how
 to encrypt your notes or tasks using OS X and GNU/Linux;
 
 ## installing dendencies
