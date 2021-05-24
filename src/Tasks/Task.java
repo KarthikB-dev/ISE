@@ -5,26 +5,16 @@ public class Task {
     //js could have a subtask of learning syntax
     //building a simple webapp, etc.
     private ArrayList<Task> subtasks;
-    //tasks can have a specific due date and time 
-    //when they are due, they could be due at the end of 
-    //the day, etc.
     private String description;
-    /* Task.java
-    subtasks + description
-    personalTask.java
-    time should be done each day (eg.) in the morning and
-    night for brushing teeth, or going for a run in the evening
-    how often should be done (daily, once every two days, once every 3
-    , etc.)
-    academicTask.java
-    has a due date, has a priority, etc.
-    */
+    private int index;
     /**
      * Makes a new Task object
      * @param description What to complete
+     * @param index The task's number
      */
-    public Task(String description) {
+    public Task(String description, int index) {
         this.description = description;
+        this.index = index;
     }
     /**
      * Adds a new component task
@@ -39,5 +29,28 @@ public class Task {
      */
     public String getDescription() {
         return this.description;
+    }
+    /**
+     * Determines if this task contains other tasks
+     * @return True if this task has other tasks within it
+     */
+    public boolean hasSubTasks() {
+        return this.subtasks.size() > 0;
+    }
+    /**
+     * Prints all the Tasks and sub Tasks
+     */
+    public void printTasks(int numTabs) {
+        StringBuffer tabString = new StringBuffer("");
+        for (int i = 0; i < numTabs; i++) {
+            tabString.append('\t');
+        }
+        System.out.print(tabString + this.description);
+        System.out.println(" (" + this.index + ")");
+        if (this.hasSubTasks()) {
+            for (Task subTask: subTasks) {
+                subTask.printTasks(numTabs + 1);
+            }
+        }
     }
 }
