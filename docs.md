@@ -18,6 +18,8 @@ to encrypt your notes or tasks using OS X and GNU/Linux;
 
 
 GPG is included by default on most GNU/Linux distributions, and so you have nothing to install.
+
+
 2. OS X:
 
 
