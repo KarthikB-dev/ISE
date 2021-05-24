@@ -20,3 +20,7 @@ GPG is included by default on most GNU/Linux distributions, and so you have noth
 ```brew install gnupg```
 
 ## performing file encryption
+Navigate to the 'Encryption' folder. Be sure to edit the file paths so they match ones
+on your system, or the program will not work. Run either ```Encryption.java``` or
+```Decryption.java``` depending on which one you want to do. Keep in mind that the 
+program waits 30 secodns before removing the encrypted or decrypted version of the text.
