@@ -69,7 +69,6 @@ public class Task {
             fout.write(tabString + this.description);
             fout.write(" (" + this.index + ")");
             fout.write('\n');
-            System.out.println(this.hasSubTasks());
             if (this.hasSubTasks()) {
                 for (Task subTask: subtasks) {
                     subTask.writeTasks(numTabs + 1, fout);

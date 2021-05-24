@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.concurrent.*;
+import java.util.Scanner;
+import java.io.*;
+import java.net.*;
+import java.awt.Desktop;
 /**
  * A study timer class
  * This is a study timer that uses the pomodoro technique of studying
@@ -16,8 +20,9 @@ public class Encryption {
 			//make sure to replace the file path with the correct one on your computer!
 			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 /home/impacable/ISE/notes.txt");
             //removes the file
-			runtime.exec("rm /home/impacable/ISE/ISE/notes.txt");
-
+            TimeUnit clock = TimeUnit.SECONDS;
+            clock.sleep(30L);
+			runtime.exec("rm /home/impacable/ISE/notes.txt");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -32,8 +37,10 @@ public class Encryption {
 			//make sure to replace the file path with the correct one on your computer!
 			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 /home/impacable/ISE/Tasks.txt");
             //removes the file
-			runtime.exec("rm /home/impacable/ISE/notes/Tasks.txt");
-
+			runtime.exec("rm /home/impacable/ISE/Tasks.txt");
+            TimeUnit clock = TimeUnit.SECONDS;
+            clock.sleep(30L);
+			runtime.exec("rm /home/impacable/ISE/Tasks.txt");
 		}
 		catch (Exception e) {
 			e.printStackTrace();

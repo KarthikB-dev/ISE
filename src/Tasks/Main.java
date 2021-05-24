@@ -64,7 +64,6 @@ public class Main {
 			try {
 				File outFile = new File("/home/impacable/ISE/Tasks.txt");
 				outFile.createNewFile();
-				System.out.println("File creation works");
 				FileWriter fout = new FileWriter("/home/impacable/ISE/Tasks.txt");
 				treeTask.get(1).writeTasks(0, fout);
 				fout.close();
