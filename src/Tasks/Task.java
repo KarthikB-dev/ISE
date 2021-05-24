@@ -74,8 +74,6 @@ public class Task {
                     subTask.writeTasks(numTabs + 1, fout);
                 }
             }
-            System.out.println("Writing works");
-        
         }
         catch (IOException e) {
             e.printStackTrace();
