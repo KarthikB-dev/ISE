@@ -1,4 +1,3 @@
-import java.util.concurrent.*;
 import java.util.*;
 import java.io.*;
 import java.net.*;
@@ -104,7 +103,7 @@ public class Timer
     public static void music(boolean study) {
         String url;
         if (study) {
-            url = "https://www.youtube.com/watch?v=sjkrrmBnpGE";
+            url = "https://www.youtube.com/watch?v=lTRiuFIWV54";
         }
         else {
             url = "https://www.youtube.com/watch?v=6riDJMI-Y8U";
