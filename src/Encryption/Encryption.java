@@ -4,8 +4,8 @@ import java.io.*;
 import java.net.*;
 import java.awt.Desktop;
 /**
- * A study timer class
- * This is a study timer that uses the pomodoro technique of studying
+ * Encrypts all your notes and tasks!
+ * Uses AES 256 encryption, so the weak point is most likely your password.
  * @author Karthik Bhattaram
  * @version 1.0
  * @sources None
@@ -37,7 +37,6 @@ public class Encryption {
 			//make sure to replace the file path with the correct one on your computer!
 			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 /home/impacable/ISE/Tasks.txt");
             //removes the file
-			runtime.exec("rm /home/impacable/ISE/Tasks.txt");
             TimeUnit clock = TimeUnit.SECONDS;
             clock.sleep(30L);
 			runtime.exec("rm /home/impacable/ISE/Tasks.txt");
