@@ -137,7 +137,7 @@ public class Note {
                 }
                 if (this.hasSubNotes()) {
                     for (Note subNote: subNotes) {
-                        subNote.printNotes(numTabs + 1);
+                        subNote.writeNotes(numTabs + 1);
                     }
                 }
                 fout.close();
