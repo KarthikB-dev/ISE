@@ -16,7 +16,7 @@ public class Encryption {
 			//make sure to replace the file path with the correct one on your computer!
 			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 /home/impacable/ISE/notes.txt");
             //removes the file
-			runtime.exec("rm /home/impacable/ISE/notes/notes.txt");
+			runtime.exec("rm /home/impacable/ISE/ISE/notes.txt");
 
 		}
 		catch (Exception e) {
@@ -27,13 +27,12 @@ public class Encryption {
      * Encrypts the users' tasks file
      */
     public static void encryptTasks() {
-        //TODO make the main method for Tasks!
         Runtime runtime = Runtime.getRuntime();
 		try {
 			//make sure to replace the file path with the correct one on your computer!
-			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 /home/impacable/ISE/tasks.txt");
+			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 /home/impacable/ISE/Tasks.txt");
             //removes the file
-			runtime.exec("rm /home/impacable/ISE/notes/notes.txt");
+			runtime.exec("rm /home/impacable/ISE/notes/Tasks.txt");
 
 		}
 		catch (Exception e) {
