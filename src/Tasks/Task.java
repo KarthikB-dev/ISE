@@ -33,4 +33,11 @@ public class Task {
     public void addTask(Task subTask) {
         this.subtasks.add(subTask);
     }
+    /**
+     * Getter method for the Task description
+     * @return The method's description
+     */
+    public String getDescription() {
+        return this.description;
+    }
 }
