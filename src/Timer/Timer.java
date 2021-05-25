@@ -107,7 +107,7 @@ public class Timer
             url = "https://www.youtube.com/watch?v=lTRiuFIWV54";
         }
         else {
-            url = "https://www.youtube.com/watch?v=6riDJMI-Y8U";
+            url = "https://www.youtube.com/watch?v=iwG36P3_sYo";
         }
         Runtime runtime = Runtime.getRuntime();
         try {
