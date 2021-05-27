@@ -116,7 +116,7 @@ public class Timer
         } 
         catch (Exception e) {
             try {
-                runtime.exec("open " + url);
+                runtime.exec("xdg-open " + url);
             }
             catch (IOException iox) {
                 System.out.println("Error");
