@@ -1,5 +1,5 @@
 # Timer
-Go to the 'Notes' folder, then run ``javac Timer.java`` and ``java Timer``
+Go to the 'Timer' folder, then run ``javac Timer.java`` and ``java Timer``
 You can enter a specific length for your break and study sessions, or use the default, which is 10-50.
 
 # Notes
@@ -7,6 +7,8 @@ Go to the 'Notes' folder, then run ``javac Main.java`` and ``java Main``
 
 # Tasks
 Go to the 'Tasks' folder, then run ``javac Main.java`` and ``java Main``
+
+## Keep in mind that for Notes and Tasks, you need to be in the notes or tasks folder to run them
 
 # Encryption
 
