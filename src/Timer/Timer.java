@@ -119,8 +119,7 @@ public class Timer
                 runtime.exec("xdg-open " + url);
             }
             catch (IOException iox) {
-                System.out.println("Error");
-                System.out.println(e.getMessage());
+                iox.printStackTrace();
             }
         }
     }

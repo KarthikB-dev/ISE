@@ -45,7 +45,7 @@ public class Decryption {
                 }
                 catch (IOException iox) {
                     System.out.println("Error");
-                    System.out.println(e.getMessage());
+                    iox.printStackTrace();
                 }
             }
         }
