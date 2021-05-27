@@ -17,12 +17,13 @@ public class Encryption {
     public static void encryptNotes() {
         Runtime runtime = Runtime.getRuntime();
 		try {
-			//make sure to replace the file path with the correct one on your computer!
-			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 /home/impacable/ISE/notes.txt");
+			String currDir = System.getProperty("user.dir");
+            String path = currDir.substring(0, currDir.indexOf("src")) + "notes.txt";
+			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 " + path);
             //removes the file
             TimeUnit clock = TimeUnit.SECONDS;
             clock.sleep(30L);
-			runtime.exec("rm /home/impacable/ISE/notes.txt");
+			runtime.exec("rm " + path);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -35,11 +36,13 @@ public class Encryption {
         Runtime runtime = Runtime.getRuntime();
 		try {
 			//make sure to replace the file path with the correct one on your computer!
-			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 /home/impacable/ISE/Tasks.txt");
+            String currDir = System.getProperty("user.dir");
+            String path = currDir.substring(0, currDir.indexOf("src")) + "Tasks.txt";
+			runtime.exec("gpg -c --no-symkey-cache --cipher-algo AES256 " + path);
             //removes the file
             TimeUnit clock = TimeUnit.SECONDS;
             clock.sleep(30L);
-			runtime.exec("rm /home/impacable/ISE/Tasks.txt");
+			runtime.exec("rm " + path);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

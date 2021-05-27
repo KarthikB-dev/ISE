@@ -22,7 +22,9 @@ public class Decryption {
         int num = cin.nextInt();
         String fname = "";
         //Make sure to change this path to the correct one on your computer!!!
-        String command = "gpg /home/impacable/ISE/";
+        String currDir = System.getProperty("user.dir");
+        String path = currDir.substring(0, currDir.indexOf("src"));
+        String command = "gpg " + path;
         if (num == 1) {
             fname = "notes.txt.gpg";
         }
@@ -57,7 +59,7 @@ public class Decryption {
             catch (InterruptedException ie) {
                 ie.printStackTrace();
             }
-			rt.exec("rm /home/impacable/ISE/" + fname);
+			rt.exec("rm " + path + fname);
         }
         catch (IOException iox) {
             System.out.println("ERROR PLATFORM NOT SUPPORTED");
