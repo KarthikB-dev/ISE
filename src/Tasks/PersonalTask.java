@@ -39,8 +39,11 @@ public class PersonalTask extends Task
      * Creates a new PersonalTask object
      * @param time The time when it must be done
      * @param frequency How often the task must be done
+     * @param description What the task actually is
+     * @param index The task's number
      */
-    public PersonalTask(int time, int frequency) {
+    public PersonalTask(int time, int frequency, String desciption, int index) {
+        super(desciption, index);
         this.time = time;
         this.frequency = frequency;
     }
