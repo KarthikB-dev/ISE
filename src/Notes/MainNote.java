@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 /**
  * This takes in user input
  * The main method for file io and user IO
@@ -94,7 +95,17 @@ public class MainNote
 		}
 		if (treeNote.size() >= 1) {
 			//write the notes to a file
-			treeNote.get(1).writeNotes(0);
+			try {
+				String currDir = System.getProperty("user.dir");
+				String path = currDir.substring(0, currDir.indexOf("src")) + "notes.txt";
+				File outFile = new File(path);
+				outFile.createNewFile();
+				FileWriter fout = new FileWriter(path);
+				treeNote.get(1).writeNotes(0, fout);
+				fout.close();
+			} catch (IOException e) {
+				System.out.println("IO Exception");
+			}
 		}
 		else {
 			System.out.println("None");

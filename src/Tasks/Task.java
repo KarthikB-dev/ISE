@@ -60,8 +60,6 @@ public class Task {
      */
     public void writeTasks(int numTabs, FileWriter fout) {
         try {
-            //change this to the correct file path on your computer!
-            //note that Microsoft Windows paths have back slashes
             StringBuffer tabString = new StringBuffer("");
             for (int i = 0; i < numTabs; i++) {
                 tabString.append('\t');

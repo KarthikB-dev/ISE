@@ -117,34 +117,25 @@ public class Note {
     /**
      * Writes the notes to a file
      */
-    public void writeNotes(int numTabs) {
+    public void writeNotes(int numTabs, FileWriter fout) {
         try {
-            //change this to the correct file path on your computer!
-            //note that Microsoft Windows paths have back slashes
-            File outFile = new File("/home/impacable/ISE/notes.txt");
-            if (outFile.createNewFile()) {
-                FileWriter fout = new FileWriter("/home/impacable/ISE/notes.txt");
-                StringBuffer tabString = new StringBuffer("");
-                for (int i = 0; i < numTabs; i++) {
-                    tabString.append('\t');
-                }
-                fout.write(tabString + this.section);
-                fout.write(" (" + this.index + ")");
+            StringBuffer tabString = new StringBuffer("");
+            for (int i = 0; i < numTabs; i++) {
+                tabString.append('\t');
+            }
+            fout.write(tabString + this.section);
+            fout.write(" (" + this.index + ")");
+            fout.write('\n');
+            if (this.hasContents()) {
+                fout.write(tabString + "    * = " + this.contents);
                 fout.write('\n');
-                if (this.hasContents()) {
-                    fout.write(tabString + "    * = " + this.contents);
-                    fout.write('\n');
-                }
-                if (this.hasSubNotes()) {
-                    for (Note subNote: subNotes) {
-                        subNote.writeNotes(numTabs + 1);
-                    }
-                }
-                fout.close();
             }
-            else {
-                System.out.println("File already exists");
+            if (this.hasSubNotes()) {
+                for (Note subNote: subNotes) {
+                    subNote.writeNotes(numTabs + 1, fout);
+                }
             }
+            fout.close();
         }
         catch (IOException e) {
             e.printStackTrace();

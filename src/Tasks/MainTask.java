@@ -66,9 +66,11 @@ public class MainTask {
 		if (treeTask.size() >= 1) {
 			//write the Tasks to a file
 			try {
-				File outFile = new File("/home/impacable/ISE/Tasks.txt");
+				String currDir = System.getProperty("user.dir");
+				String path = currDir.substring(0, currDir.indexOf("src")) + "Tasks.txt";
+				File outFile = new File(path);
 				outFile.createNewFile();
-				FileWriter fout = new FileWriter("/home/impacable/ISE/Tasks.txt");
+				FileWriter fout = new FileWriter(path);
 				treeTask.get(1).writeTasks(0, fout);
 				fout.close();
 			} catch (IOException e) {
