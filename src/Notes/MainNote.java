@@ -6,8 +6,12 @@ import java.util.*;
  * @version 5/21/2021
  * @source https://www.w3schools.com/java/java_files_create.asp
  */
-public class Main
+public class MainNote
 {
+	/**
+	 * Takes user input to make Notes
+	 * @param args Command line arguments
+	 */
 	public static void main(String[] args) 
 	{
 		/*

@@ -13,7 +13,7 @@ import java.awt.Desktop;
 public class Timer 
 {
     /** 
-     * @param args
+     * @param args Not used, no CLI args required
      * Creates the study timer
      */
     public static void main(String[] args) {
@@ -116,7 +116,7 @@ public class Timer
         } 
         catch (Exception e) {
             try {
-                runtime.exec("xdg-open " + url);
+                runtime.exec("open " + url);
             }
             catch (IOException iox) {
                 System.out.println("Error");

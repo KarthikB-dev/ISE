@@ -7,7 +7,11 @@ import java.io.*;
  * @version 5/23/2021
  * @source https://www.w3schools.com/java/java_files_create.asp
  */
-public class Main {
+public class MainTask {
+	/**
+	 * Processes user input for generating new tasks
+	 * @param args Not used, no CLI args required
+	 */
     public static void main(String[] args) 
 	{
         int taskIndex = 1;

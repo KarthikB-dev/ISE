@@ -45,6 +45,10 @@ public class Encryption {
 			e.printStackTrace();
 		}
     }
+    /**
+     * User input for whether notes or tasks should be encrypted
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.print("Enter 1 if you wish to encrypt your notes, 2 if you wish to encrypt tasks,");
         System.out.println(" and 3 if none");
