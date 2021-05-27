@@ -1,3 +1,3 @@
 Requires Java to be installed, since most of the programs are written in Java.
 
-File encryption requires GPG.
+File encryption requires GNU PG

@@ -12,6 +12,10 @@ import java.awt.Desktop;
  * @source None
  */
 public class Decryption {
+    /**
+     * @pararm args not used
+     * decrypts either notes or tasks
+     */
     public static void main(String[] args) {
         Scanner cin = new Scanner(System.in);
         System.out.println("Enter 1 to decrypt notes, 2 to decrypt tasks");

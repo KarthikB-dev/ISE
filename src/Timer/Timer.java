@@ -13,7 +13,7 @@ import java.awt.Desktop;
 public class Timer 
 {
     /** 
-     * @param args
+     * @param args Not used, no CLI args required
      * Creates the study timer
      */
     public static void main(String[] args) {

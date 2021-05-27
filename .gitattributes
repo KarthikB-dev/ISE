@@ -1,0 +1,4 @@
+*.html linguist-vendored
+*.CSS linguist-vendored
+*.JavaScript linguist-vendored
+
