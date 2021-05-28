@@ -1,6 +1,7 @@
 # Timer
 Go to the 'Timer' folder, then run ``javac Timer.java`` and ``java Timer``
 You can enter a specific length for your break and study sessions, or use the default, which is 10-50.
+Only supported on GNU/Linux.
 
 # Notes
 Go to the 'Notes' folder, then run ``javac Main.java`` and ``java Main``
@@ -12,8 +13,7 @@ Go to the 'Tasks' folder, then run ``javac Main.java`` and ``java Main``
 
 # Encryption
 
-Encryption is _not_ supported on Microsoft Windows. Here are the instructions for how
-to encrypt your notes or tasks using OS X and GNU/Linux;
+Encryption is only supported on GNU/Linux.
 
 ## installing dendencies
 1. GNU/Linux:
@@ -22,10 +22,6 @@ to encrypt your notes or tasks using OS X and GNU/Linux;
 GPG is included by default on most GNU/Linux distributions, and so you have nothing to install.
 
 
-2. OS X:
-
-
-```brew install gnupg```
 
 ## performing file encryption
 Navigate to the 'Encryption' folder. Run either ```Encryption.java``` or

@@ -1,3 +1,7 @@
 Requires Java to be installed, since most of the programs are written in Java.
 
 File encryption requires GNU PG
+
+Encryption and the study timer require GNU/Linux. 
+
+The notes and the task logger are most likely platform agnostic.

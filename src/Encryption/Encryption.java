@@ -1,8 +1,5 @@
 import java.util.concurrent.*;
 import java.util.Scanner;
-import java.io.*;
-import java.net.*;
-import java.awt.Desktop;
 /**
  * Encrypts all your notes and tasks!
  * Uses AES 256 encryption, so the weak point is most likely your password.
